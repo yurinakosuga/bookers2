@@ -22,6 +22,12 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
   end
   
+  def destroy
+    @book = Book.find(params[:id])  #削除するPostImageレコードを取得
+    @book.destroy#削除
+    redirect_to '/books'#の一覧ページへのパス
+  end
+  
   private
   # ストロングパラメータ
   def book_params
