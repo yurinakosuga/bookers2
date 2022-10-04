@@ -40,8 +40,8 @@
   		<h2>Book detail</h2>
   		<table class="table">
   		  <tbody>
-  	<td><%= image_tag @book.user.get_profile_image(100,100) %></td>
-  	
+  	<td><%= image_tag @book.user.get_profile_image(100,100) %><br>
+  	    <%= link_to @book.user.name ,user_path(@book.user.id) %></td>
     <td><%= @book.title %></td>
     <td><%= @book.body %></td>
     <td><%= link_to "Edit", edit_book_path(@book.id) ,class: "btn btn-sm btn-success" %></td>
