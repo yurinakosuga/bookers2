@@ -1,38 +1,4 @@
-<div class='container px-5 px-sm-0'>
-  
-  <div class='row'>
-<div class="col-md-3">
-      <h2>User info</h2>
-      <img src="https://bookers-level2.herokuapp.com/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNkV3QWc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--291afcdd749168d6deba7db2be3d6401c6c7ef5b/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdscGFRPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--4a929dbc7794f3c4610ba9ba5402762ad9cd1a14/default-image.jpg"><table class="table">
-  <tbody><tr></tr>
-  <tr>
-	  <th>name</th>
-	  <th><%= current_user.name %></th>
-  </tr>
-  <tr>
-	  <th>introduction</th>
-	  <th><%= current_user.introduction %></th>
-  </tr>
-</tbody></table>
-　
-<div class="row">
-  <a class="btn btn-outline-secondary btn-block edit_user_50531" href="/users/50531/edit">
-    <i class="fas fa-user-cog"></i> 
-</a></div>
-      <h2 class="mt-3">New book</h2>
-      
-
-<%= form_with model: @book do |f| %>
-  <label for="book_title">Title</label>
-  <%= f.text_field :title ,class: "form-control book_title" %>
-	
-  <label for="book_opinion">Opinion</label>
-  <%= f.text_area :body ,class: "form-control book_body" %>
-	
-  <%= f.submit 'Create Book' ,class: "btn btn-success" %>
-<% end %>
-
-</div>
+<%= render 'list', user: @user, book: @book %>
 
 <div class="col-md-8 offset-md-1">
       <h2>Books</h2>
